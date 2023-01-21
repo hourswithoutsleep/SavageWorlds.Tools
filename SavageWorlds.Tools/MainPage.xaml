@@ -4,7 +4,7 @@
              x:Class="SavageWorlds.Tools.MainPage"
              x:Name="PageSettingRule"
              BindingContext="{x:Reference PageSettingRule}">
-    <Grid RowDefinitions="1*, 8*" MaximumWidthRequest="1500" Padding="20">
+    <Grid RowDefinitions="1*, 8*, 1*" MaximumWidthRequest="1500" Padding="20">
         <Label Grid.Row="0" Text="Setting Rules" SemanticProperties.HeadingLevel="Level1" SemanticProperties.Description="Setting Rules" HorizontalTextAlignment="Center" FontSize="Title" />
         <CollectionView Grid.Row="1" ItemsSource="{Binding Rules}" x:Name="SettingRuleCollection">
             <CollectionView.ItemTemplate>
@@ -20,7 +20,13 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
+        <Grid Grid.Row="2" ColumnDefinitions="1*, 4*">
+            <Image Source="sw_logo_fp_2018.png" SemanticProperties.Description="Savage Worlds Fan Product License Image" HorizontalOptions="Center" Grid.Column="0" />
+            <Label Grid.Column="1" 
+                   Text="This game references the Savage Worlds game system, available from Pinnacle Entertainment Group at www.peginc.com. Savage Worlds and all associated logos and trademarks are copyrights of Pinnacle Entertainment Group. Used with permission. Pinnacle makes no representation or warranty as to the quality, viability, or suitability for purpose of this product."
+                   SemanticProperties.HeadingLevel="Level9" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"
+                   SemanticProperties.Description="This game references the Savage Worlds game system, available from Pinnacle Entertainment Group at www.peginc.com. Savage Worlds and all associated logos and trademarks are copyrights of Pinnacle Entertainment Group. Used with permission. Pinnacle makes no representation or warranty as to the quality, viability, or suitability for purpose of this product." />
+        </Grid>
     </Grid>
 
 </ContentPage>
