@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SavageWorlds.Tools.MainPage"
+             x:Name="PageSettingRule"
+             BindingContext="{x:Reference PageSettingRule}">
+    <Grid RowDefinitions="1*, 8*" MaximumWidthRequest="1500" Padding="20">
+        <Label Grid.Row="0" Text="Setting Rules" SemanticProperties.HeadingLevel="Level1" SemanticProperties.Description="Setting Rules" HorizontalTextAlignment="Center" FontSize="Title" />
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Rules}" x:Name="SettingRuleCollection">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid WidthRequest="1000" HeightRequest="200" Padding="10" Margin="0,20" ColumnDefinitions="2*, 5*, 11*, 2*, 2*" RowDefinitions="2*, 2*" x:Name="SettingRuleItem">
+                        <CheckBox VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="0" Grid.Row="0" />
+                        <Label Text="{Binding RuleName}" FontAttributes="Bold" LineBreakMode="WordWrap" HorizontalOptions="StartAndExpand" FontSize="Large" Grid.Row="0" Grid.Column="1" />
+                        <Label Text="{Binding BookName}" LineBreakMode="WordWrap" HorizontalOptions="StartAndExpand" FontSize="Medium" Grid.Row="0" Grid.Column="2" />
+                        <Label Text="{Binding PageNumber}" LineBreakMode="WordWrap" HorizontalOptions="StartAndExpand" FontSize="Medium" Grid.Row="0" Grid.Column="3" />
+                        <Button Text="Edit" Grid.Row="0" Grid.Column="4" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <Label Text="{Binding Description}" Grid.Row="1" Grid.ColumnSpan="5" HorizontalTextAlignment="Start" VerticalOptions="StartAndExpand" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+
+</ContentPage>
