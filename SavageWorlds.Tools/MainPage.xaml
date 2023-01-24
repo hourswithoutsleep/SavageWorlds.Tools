@@ -15,7 +15,15 @@
                         <Label Text="{Binding BookName}" LineBreakMode="WordWrap" HorizontalOptions="StartAndExpand" FontSize="Medium" Grid.Row="0" Grid.Column="2" />
                         <Label Text="{Binding PageNumber}" LineBreakMode="WordWrap" HorizontalOptions="StartAndExpand" FontSize="Medium" Grid.Row="0" Grid.Column="3" />
                         <Button Text="Edit" Grid.Row="0" Grid.Column="4" VerticalOptions="Center" HorizontalOptions="Center" />
-                        <Label Text="{Binding Description}" Grid.Row="1" Grid.ColumnSpan="5" HorizontalTextAlignment="Start" VerticalOptions="StartAndExpand" />
+                        <Editor Text="{Binding Description}" Grid.Row="1" Grid.ColumnSpan="5" HorizontalTextAlignment="Start" VerticalOptions="FillAndExpand">
+                            <Editor.Keyboard>
+                                <Keyboard x:FactoryMethod="Create">
+                                    <x:Arguments>
+                                        <KeyboardFlags>All</KeyboardFlags>
+                                    </x:Arguments>
+                                </Keyboard>
+                            </Editor.Keyboard>
+                        </Editor>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
