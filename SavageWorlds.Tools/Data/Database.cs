@@ -1,5 +1,4 @@
-﻿using SavageWorlds.Tools.Models;
-using SQLite;
+﻿using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SavageWorlds.Tools.Data
 {
-    public class Database
+    public class Database : IDataAccess
     {
         private readonly SQLiteAsyncConnection _connection;
 
