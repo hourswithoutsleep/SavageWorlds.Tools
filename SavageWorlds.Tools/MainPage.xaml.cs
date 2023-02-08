@@ -1,29 +1,22 @@
 ﻿using SavageWorlds.Tools.Data;
 using SavageWorlds.Tools.Models;
+using SavageWorlds.Tools.ViewModels;
 using System.Collections.ObjectModel;
 
 namespace SavageWorlds.Tools;
 
 public partial class MainPage : ContentPage
 {
-	public ObservableCollection<SettingRule> Rules { get; set; } = new();
-	readonly Database _database;
-
-	public MainPage()
+	
+	public MainPage(MainPageViewModel model)
 	{
 		InitializeComponent();
-		_database = new Database();
-
-		_ = Load();
+		_ = Setup(model);
 	}
 
-	private async Task Load()
+	public async Task Setup(MainPageViewModel model)
 	{
-		var rules = await _database.GetSettingRules();
-		foreach(var rule in rules)
-		{
-			Rules.Add(rule);
-		}
+		BindingContext = model;
 	}
 }
 
